@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#SBATCH --output={{config.path}}/{{config.jobname}}.out
+#SBATCH --error={{config.path}}/{{config.jobname}}.out
+#SBATCH -n {{config.ranks}}
+#SBATCH -N {{config.nodes}}
+#SBATCH --uenv={{config.uenv}}
+#SBATCH --time=20{% if config.partition %}
+#SBATCH --partition={{config.partition}}{% endif %}
+
+cd {{config.path}}
+export PATH={{config.path}}:$PATH
+
+t_jobstart="$SLURM_JOB_START_TIME"
+t_srun_start="$(date +%s)"
+srun ./{{config.scriptname}}
+t_srun_finish="$(date +%s)"
+
+printf "time startup %4d s\n" $((t_srun_start - t_jobstart))
+printf "time srun    %4d s\n" $((t_srun_finish - t_srun_start))
+
+

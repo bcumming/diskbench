@@ -1,0 +1,37 @@
+#!/bin/bash
+
+mount=/user-environment
+
+rank=$SLURM_PROCID
+
+# run ldd on the executable ./a.out
+# then run sha256sum on every dependency, to measure time taken to read them all from the squashfs
+{% if config.test == "ldd" %}
+libs=$(ldd ../a.out | awk '{print $3}' | grep ^/)
+for f in $libs; do sha256sum $f &> /dev/null; done
+{% endif %}
+
+# run sha256sum on every .so file in the uenv
+{% if config.test == "sha256" %}
+fd . -tf -eso $mount -x sha256sum {} &> /dev/null
+{% endif %}
+
+# make a new squashfs image based on the input uenv
+# create the image in memory to avoid disk I/O
+# limit the number of parallel processes used by mksquashfs to the number of cores allocated by slurm
+#   - every rank will have multiple threads hammering on the squashfs file
+#   - every rank will read every byte of the input squashfs
+#   - this is the maximum stress test for the file system with cores*ranks processes reading at the same time
+{% if config.test == "mksquashfs" %}
+path=/dev/shm/uenv-bench/task$rank
+# use 8 cores if SLURM_CPUS_PER_TASK is not set
+cores="${SLURM_CPUS_PER_TASK:-8}"
+mkdir -p $path
+mksquashfs /user-environment $path/store.squashfs -Xcompression-level 3 -noappend -processors $cores &> /dev/null
+{% endif %}
+
+{% if config.test == "mpiinit" %}
+export MPICH_GPU_SUPPORT_ENABLED=1
+../a.out &> /dev/null
+{% endif %}
+
