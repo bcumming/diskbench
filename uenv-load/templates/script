@@ -7,7 +7,7 @@ rank=$SLURM_PROCID
 # run ldd on the executable ./a.out
 # then run sha256sum on every dependency, to measure time taken to read them all from the squashfs
 {% if config.test == "ldd" %}
-libs=$(ldd ../a.out | awk '{print $3}' | grep ^/)
+libs=$(ldd ../mpiinit.exe | awk '{print $3}' | grep ^/)
 for f in $libs; do sha256sum $f &> /dev/null; done
 {% endif %}
 
@@ -32,6 +32,6 @@ mksquashfs /user-environment $path/store.squashfs -Xcompression-level 3 -noappen
 
 {% if config.test == "mpiinit" %}
 export MPICH_GPU_SUPPORT_ENABLED=1
-../a.out &> /dev/null
+../mpiinit.exe &> /dev/null
 {% endif %}
 

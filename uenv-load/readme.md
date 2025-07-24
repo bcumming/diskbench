@@ -8,6 +8,12 @@ Feedback from HPE is that slow start times for large MPI jobs could be caused by
 
 The benchmark requires [`uv`](https://docs.astral.sh/uv/getting-started/installation/).
 
+## compile
+
+Run the makefile to create the `mpiinit.exe` executable.
+
+Note that this should be performed without a uenv loaded - the makefile loads the `prgenv-gnu/24.11:v2` uenv and compiles the code.
+
 ## generate
 
 The `generate.py` script generates the job scripts required to run an experiment.
@@ -25,7 +31,7 @@ Generate a single benchmark that tests one rank on one node:
 ```console
 $ ./generate.py -uprgenv-gnu/24.11:v2 --nodes=1 --ranks-per-node=1 -jjob -pdebug -dtest
 # note that fd and hyperfine are installed by generate.py
-$ fd ./test
+$ find ./test
 test/fd
 test/hyperfine
 test/job
@@ -35,17 +41,18 @@ $ sbatch ./test/job
 $ cat ./test/job.out
 ```
 
-Generate and submit 
-```
-
 ## submit
 
+Submit the Slurm job
+
 ```
-sbatch job_64x4
+sbatch test/job
 ```
 
 ## evaluate
 
+Each job generates output in a file with the same name as the job with `.out` appended:
+
 ```
-cat job_64x4.out
+cat test/job.out
 ```
