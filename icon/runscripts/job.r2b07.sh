@@ -3,10 +3,12 @@
 
 # santis gpu batch job parameters
 # ------------------------------
-#SBATCH --job-name=exp.exclaim_ape_R2B10__aquaplanet.run
-#SBATCH --output=/capstor/scratch/cscs/ajocksch/Ben/icon-exclaim/./run/LOG.exp.exclaim_ape_R2B10__aquaplanet.run.%j.o
-#SBATCH --error=/capstor/scratch/cscs/ajocksch/Ben/icon-exclaim/./run/LOG.exp.exclaim_ape_R2B10__aquaplanet.run.%j.o
-#SBATCH --nodes=16
+#SBATCH --job-name=exp.exclaim_ape_R2B07__aquaplanet.run
+#SBATCH --output=@@ICONPATH@@/logs/icon.r2b07.diskbench.%j.txt
+#SBATCH --error=@@ICONPATH@@/logs/icon.r2b07.diskbench.%j.txt
+#SBATCH --nodes=10
+#SBATCH --uenv=icon/25.2:v3
+#SBATCH --view=default
 #SBATCH --ntasks-per-node=4
 #
 #-----------------------------------------------------------------------------
@@ -25,7 +27,7 @@ trap catchCancel SIGTERM SIGINT SIGKILL
 # ICON run script:
 # !ATTENTION! Do not change the format of the following lines.
 #             They are evaluated by checksuite scripts.
-# created by /capstor/scratch/cscs/ajocksch/Ben/icon-exclaim/run/make_target_runscript
+# created by @@ICONPATH@@/run/make_target_runscript
 # target machine is santis_gpu
 # target use_compiler is pgi
 # with_mpi=yes
@@ -50,7 +52,7 @@ export OMP_STACKSIZE=200M
 proc0_shift=0
 num_io_procs=
 
-: ${no_of_nodes:=16} ${mpi_procs_pernode:=4}
+: ${no_of_nodes:=10} ${mpi_procs_pernode:=4}
 export no_of_nodes
 export mpi_procs_pernode
 ((mpi_total_procs=no_of_nodes * mpi_procs_pernode))
@@ -71,27 +73,21 @@ radiation_ecrad_isolver=0
 
 # load local setting, if existing
 # -------------------------------
-if [ -a /capstor/scratch/cscs/ajocksch/Ben/icon-exclaim/setting ]
+if [ -a @@ICONPATH@@/setting ]
 then
   echo "Load Setting"
-  . /capstor/scratch/cscs/ajocksch/Ben/icon-exclaim/setting
+  . @@ICONPATH@@/setting
 fi
 
 # environment variables for the experiment and the target system
 # --------------------------------------------------------------
-export EXPNAME="exclaim_ape_R2B10__aquaplanet"
-# load profile
-# ------------
-if [[ -a "/etc/profile.d/modules.sh" ]]
-then
-	. /etc/profile.d/modules.sh
-fi
+export EXPNAME="exclaim_ape_R2B07__aquaplanet"
 
 #-----------------------------------------------------------------------------
 # directories with absolute paths
 # -------------------------------
 thisdir=$(pwd)
-export basedir="/capstor/scratch/cscs/ajocksch/Ben/icon-exclaim"
+export basedir="@@ICONPATH@@"
 # experiments_dir can be predefined in a machine specific run_target_* header
 experiments_dir="${experiments_dir:=${basedir}/experiments}"
 export icon_data_rootFolder="/capstor/store/cscs/userlab/d126/pool/data/ICON/"
@@ -100,14 +96,15 @@ export testingFolder_prefix="/capstor/store/cscs/userlab/d126"
 # how to start the icon model
 # ---------------------------
 export START="srun -n $mpi_total_procs --ntasks-per-node $mpi_procs_pernode --threads-per-core=1 --distribution=cyclic ${basedir}/run/run_wrapper/santis_gpu.sh"
-export MODEL="/capstor/scratch/cscs/ajocksch/Ben/icon-exclaim/bin/icon"
+export START="srun -n $mpi_total_procs --ntasks-per-node $mpi_procs_pernode --distribution=cyclic --gpus-per-task=1"
+export MODEL="@@ICONPATH@@/bin/icon"
 
 set | grep SLURM
 
 # how to submit the next job
 # --------------------------
 submit="sbatch"
-job_name="exp.exclaim_ape_R2B10__aquaplanet.run"
+job_name="exp.exclaim_ape_R2B07__aquaplanet.run"
 
 # cdo for post-processing
 # -----------------------
