@@ -1,3 +1,11 @@
+## status of work
+
+The benchmark has been built and tested.
+
+**note**: both benchmarks generated the same amount of output, and I suspect that the R2B10 script is actually runnin R2B07, but I am not expert enough to tell.
+
+We need to find a way to increase the duration, and possibly increase output frequency, to generate large regular amounts of data.
+
 ## building ICON
 
 The process is to build ICON in `/dev/shm`, so that it can be built as quickly as possible.
