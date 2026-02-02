@@ -6,7 +6,9 @@
 #SBATCH -N {{config.nodes}}
 #SBATCH --uenv={{config.uenv}}
 #SBATCH --time=20{% if config.partition %}
-#SBATCH --partition={{config.partition}}{% endif %}
+#SBATCH --partition={{config.partition}}{% endif %}{% if config.reservation %}
+#SBATCH --reservation={{config.reservation}}{% endif %}
+#SBATCH --time=20
 
 cd {{config.path}}
 export PATH={{config.path}}:$PATH

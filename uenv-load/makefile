@@ -1,4 +1,4 @@
-WRAPPER = uenv run prgenv-gnu/24.11:v2 --view=default --
+WRAPPER = uenv run prgenv-gnu/25.11:v1 --view=default --
 
 CXX = $(WRAPPER) mpicxx
 

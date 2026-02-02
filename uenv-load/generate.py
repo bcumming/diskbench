@@ -24,6 +24,7 @@ def make_argparser():
     parser.add_argument("-j", "--jobname", required=True, type=str)
     parser.add_argument("-d", "--dir", required=True, type=str)
     parser.add_argument("-p", "--partition", required=False, type=str)
+    parser.add_argument("--reservation", required=False, type=str)
     parser.add_argument("-r", "--ranks-per-node", required=True, type=int)
     parser.add_argument("-s", "--slurm", required=False, type=str)
     parser.add_argument("-u", "--uenv", required=True, type=str)
@@ -91,6 +92,7 @@ def generate(args):
             "nodes": nodes,
             "uenv": args.uenv,
             "partition": args.partition,
+            "reservation": args.reservation,
             "test": args.test,
     }
 
