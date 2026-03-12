@@ -1,0 +1,665 @@
+capstor/scratch/cscs/bcumming/disktest/job-64/bwrap-mutable-root.sh --tmpfs ~ --bind /capstor/scratch/cscs/bcumming/disktest/job-64/tmp /tmp --bind /capstor/scratch/cscs/bcumming/disktest/job-64/store /user-tools spack --version > spack-version
+spack arch... linux-sles15-neoverse_v2
+spack version... 1.1.1 (2e2169d5282d166f63e3ee4db8d4446c43cefa8a)
+checking if spack concretizer works...  success
+touch mirror-setup
+/capstor/scratch/cscs/bcumming/disktest/job-64/bwrap-mutable-root.sh --tmpfs ~ --bind /capstor/scratch/cscs/bcumming/disktest/job-64/tmp /tmp --bind /capstor/scratch/cscs/bcumming/disktest/job-64/store /user-tools make -C compilers
+make[1]: Entering directory '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers'
+mkdir -p /user-tools
+spack config --scope=user add config:install_tree:root:/user-tools
+/usr/bin/time -f '"%C" took %e seconds.' spack -e gcc/ concretize -f
+==> Concretized 1 spec:
+ -   nthj77m  gcc@14.3.0~binutils+bootstrap~graphite+libsanitizer~mold~nvptx~piclibs+profiled+strip build_system=autotools build_type=Release languages:='c,c++,fortran' patches:=8b79314 platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@12.3.0
+ -   cdwve2q      ^compiler-wrapper@1.0 build_system=generic platform=linux os=sles15 target=neoverse_v2
+ -   dqhwgpu      ^diffutils@3.12 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@12.3.0
+ -   vodpknc          ^libiconv@1.18 build_system=autotools libs:=shared,static platform=linux os=sles15 target=neoverse_v2 %c=gcc@12.3.0
+ -   wh247gc      ^gawk@5.3.2~nls build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@12.3.0
+ -   ccvgdut          ^readline@8.3 build_system=autotools patches:=21f0a03 platform=linux os=sles15 target=neoverse_v2 %c=gcc@12.3.0
+[e]  yoxcgbp      ^gcc@12.3.0+binutils+bootstrap~graphite+libsanitizer~mold~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages:='c,c++,fortran' platform=linux os=sles15 target=aarch64
+ -   dt5246r      ^gcc-runtime@12.3.0 build_system=generic platform=linux os=sles15 target=neoverse_v2
+[e]  alti7xg      ^glibc@2.31 build_system=autotools platform=linux os=sles15 target=aarch64
+ -   4vjyv6i      ^gmake@4.4.1~guile build_system=generic platform=linux os=sles15 target=neoverse_v2 %c=gcc@12.3.0
+ -   t3vlxzm      ^gmp@6.3.0+cxx build_system=autotools libs:=static platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@12.3.0
+ -   2kx6zzj          ^autoconf@2.72 build_system=autotools platform=linux os=sles15 target=neoverse_v2
+ -   xrdlqc5          ^automake@1.18.1 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@12.3.0
+ -   ilfkyky          ^m4@1.4.21+sigsegv build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@12.3.0
+ -   i25aiin              ^libsigsegv@2.15 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@12.3.0
+ -   7vbiayw      ^gnuconfig@2025-07-10 build_system=generic platform=linux os=sles15 target=neoverse_v2
+ -   hsccxl4      ^libtool@2.5.4 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@12.3.0
+ -   fdmb5o6          ^findutils@4.10.0 build_system=autotools patches:=440b954 platform=linux os=sles15 target=neoverse_v2 %c=gcc@12.3.0
+ -   gdft2p3      ^mpc@1.3.1 build_system=autotools libs:=static platform=linux os=sles15 target=neoverse_v2 %c=gcc@12.3.0
+ -   tn7jorz      ^mpfr@4.2.2 build_system=autotools libs:=static platform=linux os=sles15 target=neoverse_v2 %c=gcc@12.3.0
+ -   pfcj2eu          ^autoconf-archive@2024.10.16 build_system=autotools platform=linux os=sles15 target=neoverse_v2
+ -   whb2pw2      ^perl@5.42.0+cpanm+opcode+open+shared+threads build_system=generic platform=linux os=sles15 target=neoverse_v2 %c=gcc@12.3.0
+ -   x7ooavd          ^berkeley-db@18.1.40+cxx~docs+stl build_system=autotools patches:=26090f4,b231fcc platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@12.3.0
+ -   fwpmzri          ^bzip2@1.0.8~debug~pic+shared build_system=generic platform=linux os=sles15 target=neoverse_v2 %c=gcc@12.3.0
+ -   mxeindj          ^gdbm@1.26 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@12.3.0
+ -   4d2twpm      ^texinfo@7.2~xs build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@12.3.0
+ -   gnofvfy          ^gettext@1.0+bzip2+curses+git~libunistring+libxml2+pic+shared+tar+xz build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@12.3.0
+ -   wfnasnf              ^libxml2@2.15.1+pic~python+shared build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@12.3.0
+ -   mflpqxt              ^tar@1.35 build_system=autotools zip=pigz platform=linux os=sles15 target=neoverse_v2 %c=gcc@12.3.0
+ -   dxeoetq                  ^pigz@2.8 build_system=makefile platform=linux os=sles15 target=neoverse_v2 %c=gcc@12.3.0
+ -   ljicnui              ^xz@5.6.3~pic build_system=autotools libs:=shared,static platform=linux os=sles15 target=neoverse_v2 %c=gcc@12.3.0
+ -   pw3brbz          ^ncurses@6.5-20250705~symlinks+termlib abi=none build_system=autotools patches:=7a351bc platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@12.3.0
+ -   lzarlfh              ^pkgconf@2.5.1 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@12.3.0
+ -   u55i7bg      ^zlib-ng@2.3.2+compat+new_strategies+opt+pic+shared build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@12.3.0
+ -   w57qn6l      ^zstd@1.5.7+programs build_system=makefile compression:=none libs:=static platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@12.3.0
+
+"spack -e gcc/ concretize -f" took 26.79 seconds.
+spack -e gcc/ env depfile --make-target-prefix gcc/generated -o gcc/Makefile
+mkdir -p /user-tools
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /alti7xgm6rypuxfjb44lpxtuxqj5tz2o # glibc@2.31 build_system=autotools platform=linux os=sles15 target=aarch64
+[+] /usr (external glibc-2.31-alti7xgm6rypuxfjb44lpxtuxqj5tz2o)
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /yoxcgbppx2rwkj7v2o7sxvessvyhzhva # gcc@12.3.0+binutils+bootstrap~graphite+libsanitizer~mold~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages:='c,c++,fortran' platform=linux os=sles15 target=aarch64
+[+] /usr (external gcc-12.3.0-yoxcgbppx2rwkj7v2o7sxvessvyhzhva)
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /cdwve2qub4albif5ahsd5cnvohqppdcz # compiler-wrapper@1.0 build_system=generic platform=linux os=sles15 target=neoverse_v2
+==> No binary for compiler-wrapper-1.0-cdwve2qub4albif5ahsd5cnvohqppdcz found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/c7/c7b816479554fd32f677db15ceec6627b91c86074a5d65498688afcbe2796188
+==> No patches needed for compiler-wrapper
+==> compiler-wrapper: Executing phase: 'install'
+==> compiler-wrapper: Successfully installed compiler-wrapper-1.0-cdwve2qub4albif5ahsd5cnvohqppdcz
+  Stage: 0.06s.  Install: 0.03s.  Post-install: 0.09s.  Total: 0.25s
+[+] /user-tools/linux-neoverse_v2/compiler-wrapper-1.0-cdwve2qub4albif5ahsd5cnvohqppdcz
+==> Installing compiler-wrapper-1.0-cdwve2qub4albif5ahsd5cnvohqppdcz [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /dt5246r7jzs4joyiwzfxxvbzn6yzcmrt # gcc-runtime@12.3.0 build_system=generic platform=linux os=sles15 target=neoverse_v2
+==> No binary for gcc-runtime-12.3.0-dt5246r7jzs4joyiwzfxxvbzn6yzcmrt found: installing from source
+==> No patches needed for gcc-runtime
+==> gcc-runtime: Executing phase: 'install'
+==> gcc-runtime: Successfully installed gcc-runtime-12.3.0-dt5246r7jzs4joyiwzfxxvbzn6yzcmrt
+  Stage: 0.00s.  Install: 0.09s.  Post-install: 0.08s.  Total: 0.23s
+[+] /user-tools/linux-neoverse_v2/gcc-runtime-12.3.0-dt5246r7jzs4joyiwzfxxvbzn6yzcmrt
+==> Installing gcc-runtime-12.3.0-dt5246r7jzs4joyiwzfxxvbzn6yzcmrt [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /7vbiaywkvidppbnjnnxpwcfbddw2e7j6 # gnuconfig@2025-07-10 build_system=generic platform=linux os=sles15 target=neoverse_v2
+==> No binary for gnuconfig-2025-07-10-7vbiaywkvidppbnjnnxpwcfbddw2e7j6 found: installing from source
+==> Fetching https://github.com/spack/gnuconfig/releases/download/2025-07-10/gnuconfig-2025-07-10.tar.gz
+==> No patches needed for gnuconfig
+==> gnuconfig: Executing phase: 'install'
+==> gnuconfig: Successfully installed gnuconfig-2025-07-10-7vbiaywkvidppbnjnnxpwcfbddw2e7j6
+  Stage: 0.83s.  Install: 0.01s.  Post-install: 0.05s.  Total: 0.96s
+[+] /user-tools/linux-neoverse_v2/gnuconfig-2025-07-10-7vbiaywkvidppbnjnnxpwcfbddw2e7j6
+==> Installing gnuconfig-2025-07-10-7vbiaywkvidppbnjnnxpwcfbddw2e7j6 [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /4vjyv6izpeposevwfuzannwxuplnkvtq # gmake@4.4.1~guile build_system=generic platform=linux os=sles15 target=neoverse_v2
+==> No binary for gmake-4.4.1-4vjyv6izpeposevwfuzannwxuplnkvtq found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/dd/dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3.tar.gz
+==> No patches needed for gmake
+==> gmake: Executing phase: 'install'
+==> gmake: Successfully installed gmake-4.4.1-4vjyv6izpeposevwfuzannwxuplnkvtq
+  Stage: 0.43s.  Install: 14.71s.  Post-install: 0.06s.  Total: 15.26s
+[+] /user-tools/linux-neoverse_v2/gmake-4.4.1-4vjyv6izpeposevwfuzannwxuplnkvtq
+==> Installing gmake-4.4.1-4vjyv6izpeposevwfuzannwxuplnkvtq [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /u55i7bgs4lhfnyp36cjg3teuwmwaaozz # zlib-ng@2.3.2+compat+new_strategies+opt+pic+shared build_system=autotools platform=linux os=sles15 target=neoverse_v2
+==> No binary for zlib-ng-2.3.2-u55i7bgs4lhfnyp36cjg3teuwmwaaozz found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/6a/6a0561b50b8f5f6434a6a9e667a67026f2b2064a1ffa959c6b2dae320161c2a8.tar.gz
+==> No patches needed for zlib-ng
+==> zlib-ng: Executing phase: 'autoreconf'
+==> zlib-ng: Executing phase: 'configure'
+==> zlib-ng: Executing phase: 'build'
+==> zlib-ng: Executing phase: 'install'
+==> zlib-ng: Successfully installed zlib-ng-2.3.2-u55i7bgs4lhfnyp36cjg3teuwmwaaozz
+  Stage: 0.68s.  Autoreconf: 0.10s.  Configure: 3.82s.  Build: 1.58s.  Install: 0.23s.  Post-install: 0.10s.  Total: 6.68s
+[+] /user-tools/linux-neoverse_v2/zlib-ng-2.3.2-u55i7bgs4lhfnyp36cjg3teuwmwaaozz
+==> Installing zlib-ng-2.3.2-u55i7bgs4lhfnyp36cjg3teuwmwaaozz [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /lzarlfh3fmcmofwi2ssbujqonr4liv34 # pkgconf@2.5.1 build_system=autotools platform=linux os=sles15 target=neoverse_v2
+==> No binary for pkgconf-2.5.1-lzarlfh3fmcmofwi2ssbujqonr4liv34 found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/cd/cd05c9589b9f86ecf044c10a2269822bc9eb001eced2582cfffd658b0a50c243.tar.xz
+==> No patches needed for pkgconf
+==> pkgconf: Executing phase: 'autoreconf'
+==> pkgconf: Executing phase: 'configure'
+==> pkgconf: Executing phase: 'build'
+==> pkgconf: Executing phase: 'install'
+==> pkgconf: Successfully installed pkgconf-2.5.1-lzarlfh3fmcmofwi2ssbujqonr4liv34
+  Stage: 0.31s.  Autoreconf: 0.39s.  Configure: 6.80s.  Build: 1.29s.  Install: 0.49s.  Post-install: 0.13s.  Total: 9.57s
+[+] /user-tools/linux-neoverse_v2/pkgconf-2.5.1-lzarlfh3fmcmofwi2ssbujqonr4liv34
+==> Installing pkgconf-2.5.1-lzarlfh3fmcmofwi2ssbujqonr4liv34 [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /dxeoetqmyptydse4dnmuxu2d6efzxrmt # pigz@2.8 build_system=makefile platform=linux os=sles15 target=neoverse_v2
+==> No binary for pigz-2.8-dxeoetqmyptydse4dnmuxu2d6efzxrmt found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/2f/2f7f6a6986996d21cb8658535fff95f1c7107ddce22b5324f4b41890e2904706.tar.gz
+==> No patches needed for pigz
+==> pigz: Executing phase: 'edit'
+==> pigz: Executing phase: 'build'
+==> pigz: Executing phase: 'install'
+==> pigz: Successfully installed pigz-2.8-dxeoetqmyptydse4dnmuxu2d6efzxrmt
+  Stage: 0.11s.  Edit: 0.00s.  Build: 1.39s.  Install: 0.01s.  Post-install: 0.07s.  Total: 1.68s
+[+] /user-tools/linux-neoverse_v2/pigz-2.8-dxeoetqmyptydse4dnmuxu2d6efzxrmt
+==> Installing pigz-2.8-dxeoetqmyptydse4dnmuxu2d6efzxrmt [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /i25aiindlmaz2osks3bqaxihkoucctyn # libsigsegv@2.15 build_system=autotools platform=linux os=sles15 target=neoverse_v2
+==> No binary for libsigsegv-2.15-i25aiindlmaz2osks3bqaxihkoucctyn found: installing from source
+==> Fetching https://ftpmirror.gnu.org/libsigsegv/libsigsegv-2.15.tar.gz
+==> No patches needed for libsigsegv
+==> libsigsegv: Executing phase: 'autoreconf'
+==> libsigsegv: Executing phase: 'configure'
+==> libsigsegv: Executing phase: 'build'
+==> libsigsegv: Executing phase: 'install'
+==> libsigsegv: Successfully installed libsigsegv-2.15-i25aiindlmaz2osks3bqaxihkoucctyn
+  Stage: 5.97s.  Autoreconf: 0.18s.  Configure: 8.74s.  Build: 0.76s.  Install: 0.29s.  Post-install: 0.10s.  Total: 16.16s
+[+] /user-tools/linux-neoverse_v2/libsigsegv-2.15-i25aiindlmaz2osks3bqaxihkoucctyn
+==> Installing libsigsegv-2.15-i25aiindlmaz2osks3bqaxihkoucctyn [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /pfcj2eutot7yqzkjbrylo3ia7cjz622r # autoconf-archive@2024.10.16 build_system=autotools platform=linux os=sles15 target=neoverse_v2
+==> No binary for autoconf-archive-2024.10.16-pfcj2eutot7yqzkjbrylo3ia7cjz622r found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/7b/7bcd5d001916f3a50ed7436f4f700e3d2b1bade3ed803219c592d62502a57363.tar.xz
+==> No patches needed for autoconf-archive
+==> autoconf-archive: Executing phase: 'autoreconf'
+==> autoconf-archive: Executing phase: 'configure'
+==> autoconf-archive: Executing phase: 'build'
+==> autoconf-archive: Executing phase: 'install'
+==> autoconf-archive: Successfully installed autoconf-archive-2024.10.16-pfcj2eutot7yqzkjbrylo3ia7cjz622r
+  Stage: 1.92s.  Autoreconf: 0.01s.  Configure: 2.13s.  Build: 0.23s.  Install: 15.75s.  Post-install: 1.23s.  Total: 21.39s
+[+] /user-tools/linux-neoverse_v2/autoconf-archive-2024.10.16-pfcj2eutot7yqzkjbrylo3ia7cjz622r
+==> Installing autoconf-archive-2024.10.16-pfcj2eutot7yqzkjbrylo3ia7cjz622r [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /ljicnuiymlxxkcg4pp3eppftv4645ibl # xz@5.6.3~pic build_system=autotools libs:=shared,static platform=linux os=sles15 target=neoverse_v2
+==> No binary for xz-5.6.3-ljicnuiymlxxkcg4pp3eppftv4645ibl found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/a9/a95a49147b2dbb5487517acc0adcd77f9c2032cf00664eeae352405357d14a6c.tar.bz2
+==> No patches needed for xz
+==> xz: Executing phase: 'autoreconf'
+==> xz: Executing phase: 'configure'
+==> xz: Executing phase: 'build'
+==> xz: Executing phase: 'install'
+==> xz: Successfully installed xz-5.6.3-ljicnuiymlxxkcg4pp3eppftv4645ibl
+  Stage: 6.02s.  Autoreconf: 0.21s.  Configure: 14.68s.  Build: 3.57s.  Install: 3.53s.  Post-install: 0.39s.  Total: 28.51s
+[+] /user-tools/linux-neoverse_v2/xz-5.6.3-ljicnuiymlxxkcg4pp3eppftv4645ibl
+==> Installing xz-5.6.3-ljicnuiymlxxkcg4pp3eppftv4645ibl [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /vodpkncgn62wskc3qatsqjxr56re25jt # libiconv@1.18 build_system=autotools libs:=shared,static platform=linux os=sles15 target=neoverse_v2
+==> No binary for libiconv-1.18-vodpkncgn62wskc3qatsqjxr56re25jt found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/3b/3b08f5f4f9b4eb82f151a7040bfd6fe6c6fb922efe4b1659c66ea933276965e8.tar.gz
+==> No patches needed for libiconv
+==> libiconv: Executing phase: 'autoreconf'
+==> libiconv: Executing phase: 'configure'
+==> libiconv: Executing phase: 'build'
+==> libiconv: Executing phase: 'install'
+==> libiconv: Successfully installed libiconv-1.18-vodpkncgn62wskc3qatsqjxr56re25jt
+  Stage: 1.67s.  Autoreconf: 0.40s.  Configure: 25.31s.  Build: 10.01s.  Install: 2.74s.  Post-install: 0.39s.  Total: 40.68s
+[+] /user-tools/linux-neoverse_v2/libiconv-1.18-vodpkncgn62wskc3qatsqjxr56re25jt
+==> Installing libiconv-1.18-vodpkncgn62wskc3qatsqjxr56re25jt [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /x7ooavdt56qdvnylcxl6r7chrqy4z75g # berkeley-db@18.1.40+cxx~docs+stl build_system=autotools patches:=26090f4,b231fcc platform=linux os=sles15 target=neoverse_v2
+==> No binary for berkeley-db-18.1.40-x7ooavdt56qdvnylcxl6r7chrqy4z75g found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/0c/0cecb2ef0c67b166de93732769abdeba0555086d51de1090df325e18ee8da9c8.tar.gz
+==> Applied patch /user-tools/repos/spack_repo/builtin/packages/berkeley_db/drop-docs.patch
+==> Applied patch /user-tools/repos/spack_repo/builtin/packages/berkeley_db/tls.patch
+==> Ran patch() for berkeley-db
+==> berkeley-db: Executing phase: 'autoreconf'
+==> berkeley-db: Executing phase: 'configure'
+==> berkeley-db: Executing phase: 'build'
+==> berkeley-db: Executing phase: 'install'
+==> berkeley-db: Successfully installed berkeley-db-18.1.40-x7ooavdt56qdvnylcxl6r7chrqy4z75g
+  Stage: 13.19s.  Autoreconf: 0.40s.  Configure: 21.69s.  Build: 6.28s.  Install: 1.07s.  Post-install: 0.15s.  Total: 42.88s
+[+] /user-tools/linux-neoverse_v2/berkeley-db-18.1.40-x7ooavdt56qdvnylcxl6r7chrqy4z75g
+==> Installing berkeley-db-18.1.40-x7ooavdt56qdvnylcxl6r7chrqy4z75g [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /w57qn6ldigfs6ebci42rssslrt7i7umq # zstd@1.5.7+programs build_system=makefile compression:=none libs:=static platform=linux os=sles15 target=neoverse_v2
+==> No binary for zstd-1.5.7-w57qn6ldigfs6ebci42rssslrt7i7umq found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/37/37d7284556b20954e56e1ca85b80226768902e2edabd3b649e9e72c0c9012ee3.tar.gz
+==> No patches needed for zstd
+==> zstd: Executing phase: 'edit'
+==> zstd: Executing phase: 'build'
+==> zstd: Executing phase: 'install'
+==> zstd: Successfully installed zstd-1.5.7-w57qn6ldigfs6ebci42rssslrt7i7umq
+  Stage: 1.15s.  Edit: 0.00s.  Build: 0.00s.  Install: 55.83s.  Post-install: 0.09s.  Total: 57.20s
+[+] /user-tools/linux-neoverse_v2/zstd-1.5.7-w57qn6ldigfs6ebci42rssslrt7i7umq
+==> Installing zstd-1.5.7-w57qn6ldigfs6ebci42rssslrt7i7umq [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /wfnasnfmy5lfywtiabvd6frgdb4bdfeu # libxml2@2.15.1+pic~python+shared build_system=autotools platform=linux os=sles15 target=neoverse_v2
+==> No binary for libxml2-2.15.1-wfnasnfmy5lfywtiabvd6frgdb4bdfeu found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/c0/c008bac08fd5c7b4a87f7b8a71f283fa581d80d80ff8d2efd3b26224c39bc54c.tar.xz
+==> Fetching https://mirror.spack.io/_source-cache/archive/96/96151685cec997e1f9f3387e3626d61e6284d4d6e66e0e440c209286c03e9cc7.tar.gz
+==> Moving resource stage
+        source: /tmp/bcumming/spack-stage/resource-xmlts-wfnasnfmy5lfywtiabvd6frgdb4bdfeu/spack-src/
+        destination: /tmp/bcumming/spack-stage/spack-stage-libxml2-2.15.1-wfnasnfmy5lfywtiabvd6frgdb4bdfeu/spack-src/xmlconf
+==> Ran patch() for libxml2
+==> libxml2: Executing phase: 'autoreconf'
+==> libxml2: Executing phase: 'configure'
+==> libxml2: Executing phase: 'build'
+==> libxml2: Executing phase: 'install'
+==> libxml2: Successfully installed libxml2-2.15.1-wfnasnfmy5lfywtiabvd6frgdb4bdfeu
+  Stage: 24.89s.  Autoreconf: 0.37s.  Configure: 5.50s.  Build: 6.17s.  Install: 1.83s.  Post-install: 0.15s.  Total: 39.02s
+[+] /user-tools/linux-neoverse_v2/libxml2-2.15.1-wfnasnfmy5lfywtiabvd6frgdb4bdfeu
+==> Installing libxml2-2.15.1-wfnasnfmy5lfywtiabvd6frgdb4bdfeu [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /dqhwgpu2crgzmpk2rdsumk6kgajgy367 # diffutils@3.12 build_system=autotools platform=linux os=sles15 target=neoverse_v2
+==> No binary for diffutils-3.12-dqhwgpu2crgzmpk2rdsumk6kgajgy367 found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/7c/7c8b7f9fc8609141fdea9cece85249d308624391ff61dedaf528fcb337727dfd.tar.xz
+==> No patches needed for diffutils
+==> diffutils: Executing phase: 'autoreconf'
+==> diffutils: Executing phase: 'configure'
+==> diffutils: Executing phase: 'build'
+==> diffutils: Executing phase: 'install'
+==> diffutils: Successfully installed diffutils-3.12-dqhwgpu2crgzmpk2rdsumk6kgajgy367
+  Stage: 2.22s.  Autoreconf: 0.22s.  Configure: 58.10s.  Build: 4.56s.  Install: 2.32s.  Post-install: 0.24s.  Total: 1m 7.80s
+[+] /user-tools/linux-neoverse_v2/diffutils-3.12-dqhwgpu2crgzmpk2rdsumk6kgajgy367
+==> Installing diffutils-3.12-dqhwgpu2crgzmpk2rdsumk6kgajgy367 [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /fwpmzri46m77kfwzmefwgwpqw5mk6fjq # bzip2@1.0.8~debug~pic+shared build_system=generic platform=linux os=sles15 target=neoverse_v2
+==> No binary for bzip2-1.0.8-fwpmzri46m77kfwzmefwgwpqw5mk6fjq found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/ab/ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269.tar.gz
+==> Ran patch() for bzip2
+==> bzip2: Executing phase: 'install'
+==> bzip2: Successfully installed bzip2-1.0.8-fwpmzri46m77kfwzmefwgwpqw5mk6fjq
+  Stage: 0.16s.  Install: 2.02s.  Post-install: 0.11s.  Total: 2.36s
+[+] /user-tools/linux-neoverse_v2/bzip2-1.0.8-fwpmzri46m77kfwzmefwgwpqw5mk6fjq
+==> Installing bzip2-1.0.8-fwpmzri46m77kfwzmefwgwpqw5mk6fjq [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /pw3brbzvmdjqq4p2c26pqktxhvgtagks # ncurses@6.5-20250705~symlinks+termlib abi=none build_system=autotools patches:=7a351bc platform=linux os=sles15 target=neoverse_v2
+==> No binary for ncurses-6.5-20250705-pw3brbzvmdjqq4p2c26pqktxhvgtagks found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/73/73f6c22db6c3fcac562e7b35aebf7d4cbb253ea30ba2ee465ab84d7d1b5cefc1.tgz
+==> Applied patch /user-tools/repos/spack_repo/builtin/packages/ncurses/rxvt_unicode_6_4.patch
+==> ncurses: Executing phase: 'autoreconf'
+==> ncurses: Executing phase: 'configure'
+==> ncurses: Executing phase: 'build'
+==> ncurses: Executing phase: 'install'
+==> ncurses: Successfully installed ncurses-6.5-20250705-pw3brbzvmdjqq4p2c26pqktxhvgtagks
+  Stage: 2.29s.  Autoreconf: 0.23s.  Configure: 1m 1.93s.  Build: 23.89s.  Install: 14.42s.  Post-install: 5.09s.  Total: 1m 48.07s
+[+] /user-tools/linux-neoverse_v2/ncurses-6.5-20250705-pw3brbzvmdjqq4p2c26pqktxhvgtagks
+==> Installing ncurses-6.5-20250705-pw3brbzvmdjqq4p2c26pqktxhvgtagks [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /ccvgdut2vkpq5m4odwmcz2natbdvh6dt # readline@8.3 build_system=autotools patches:=21f0a03 platform=linux os=sles15 target=neoverse_v2
+==> No binary for readline-8.3-ccvgdut2vkpq5m4odwmcz2natbdvh6dt found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/fe/fe5383204467828cd495ee8d1d3c037a7eba1389c22bc6a041f627976f9061cc.tar.gz
+==> Fetching https://mirror.spack.io/_source-cache/archive/21/21f0a03106dbe697337cd25c70eb0edbaa2bdb6d595b45f83285cdd35bac84de
+==> Applied patch https://ftpmirror.gnu.org/readline/readline-8.3-patches/readline83-001
+==> readline: Executing phase: 'autoreconf'
+==> readline: Executing phase: 'configure'
+==> readline: Executing phase: 'build'
+==> readline: Executing phase: 'install'
+==> readline: Successfully installed readline-8.3-ccvgdut2vkpq5m4odwmcz2natbdvh6dt
+  Stage: 0.43s.  Autoreconf: 0.15s.  Configure: 10.23s.  Build: 1.54s.  Install: 0.87s.  Post-install: 0.15s.  Total: 13.47s
+[+] /user-tools/linux-neoverse_v2/readline-8.3-ccvgdut2vkpq5m4odwmcz2natbdvh6dt
+==> Installing readline-8.3-ccvgdut2vkpq5m4odwmcz2natbdvh6dt [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /mxeindjkiqhibn5lhemfzs66lcf3z4yj # gdbm@1.26 build_system=autotools platform=linux os=sles15 target=neoverse_v2
+==> No binary for gdbm-1.26-mxeindjkiqhibn5lhemfzs66lcf3z4yj found: installing from source
+==> Fetching https://ftpmirror.gnu.org/gdbm/gdbm-1.26.tar.gz
+==> No patches needed for gdbm
+==> gdbm: Executing phase: 'autoreconf'
+==> gdbm: Executing phase: 'configure'
+==> gdbm: Executing phase: 'build'
+==> gdbm: Executing phase: 'install'
+==> gdbm: Successfully installed gdbm-1.26-mxeindjkiqhibn5lhemfzs66lcf3z4yj
+  Stage: 1.79s.  Autoreconf: 0.12s.  Configure: 7.14s.  Build: 2.66s.  Install: 2.15s.  Post-install: 0.20s.  Total: 14.18s
+[+] /user-tools/linux-neoverse_v2/gdbm-1.26-mxeindjkiqhibn5lhemfzs66lcf3z4yj
+==> Installing gdbm-1.26-mxeindjkiqhibn5lhemfzs66lcf3z4yj [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /mflpqxtwmf7jrkkye2hbbnlfk2eghc2e # tar@1.35 build_system=autotools zip=pigz platform=linux os=sles15 target=neoverse_v2
+==> No binary for tar-1.35-mflpqxtwmf7jrkkye2hbbnlfk2eghc2e found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/14/14d55e32063ea9526e057fbf35fcabd53378e769787eff7919c3755b02d2b57e.tar.gz
+==> No patches needed for tar
+==> tar: Executing phase: 'autoreconf'
+==> tar: Executing phase: 'configure'
+==> tar: Executing phase: 'build'
+==> tar: Executing phase: 'install'
+==> tar: Successfully installed tar-1.35-mflpqxtwmf7jrkkye2hbbnlfk2eghc2e
+  Stage: 1.51s.  Autoreconf: 0.16s.  Configure: 49.61s.  Build: 4.79s.  Install: 0.90s.  Post-install: 0.16s.  Total: 57.25s
+[+] /user-tools/linux-neoverse_v2/tar-1.35-mflpqxtwmf7jrkkye2hbbnlfk2eghc2e
+==> Installing tar-1.35-mflpqxtwmf7jrkkye2hbbnlfk2eghc2e [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /ilfkyky57p42va4uzbjp7rn27dbv5fia # m4@1.4.21+sigsegv build_system=autotools platform=linux os=sles15 target=neoverse_v2
+==> No binary for m4-1.4.21-ilfkyky57p42va4uzbjp7rn27dbv5fia found: installing from source
+==> Fetching https://ftpmirror.gnu.org/m4/m4-1.4.21.tar.gz
+==> No patches needed for m4
+==> m4: Executing phase: 'autoreconf'
+==> m4: Executing phase: 'configure'
+==> m4: Executing phase: 'build'
+==> m4: Executing phase: 'install'
+==> m4: Successfully installed m4-1.4.21-ilfkyky57p42va4uzbjp7rn27dbv5fia
+  Stage: 3.64s.  Autoreconf: 0.16s.  Configure: 59.52s.  Build: 5.22s.  Install: 2.97s.  Post-install: 0.25s.  Total: 1m 11.89s
+[+] /user-tools/linux-neoverse_v2/m4-1.4.21-ilfkyky57p42va4uzbjp7rn27dbv5fia
+==> Installing m4-1.4.21-ilfkyky57p42va4uzbjp7rn27dbv5fia [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /whb2pw2achkwinwp5q4rky26dfkfdix3 # perl@5.42.0+cpanm+opcode+open+shared+threads build_system=generic platform=linux os=sles15 target=neoverse_v2
+==> No binary for perl-5.42.0-whb2pw2achkwinwp5q4rky26dfkfdix3 found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/e0/e093ef184d7f9a1b9797e2465296f55510adb6dab8842b0c3ed53329663096dc.tar.gz
+==> Fetching https://mirror.spack.io/_source-cache/archive/9d/9da50e155df72bce55cb69f51f1dbb4b62d23740fb99f6178bb27f22ebdf8a46.tar.gz
+==> Moving resource stage
+        source: /tmp/bcumming/spack-stage/resource-cpanm-whb2pw2achkwinwp5q4rky26dfkfdix3/spack-src/
+        destination: /tmp/bcumming/spack-stage/spack-stage-perl-5.42.0-whb2pw2achkwinwp5q4rky26dfkfdix3/spack-src/cpanm/cpanm
+==> Ran patch() for perl
+==> perl: Executing phase: 'configure'
+==> perl: Executing phase: 'build'
+==> perl: Executing phase: 'install'
+==> perl: Successfully installed perl-5.42.0-whb2pw2achkwinwp5q4rky26dfkfdix3
+  Stage: 9.15s.  Configure: 56.65s.  Build: 28.57s.  Install: 21.26s.  Post-install: 4.75s.  Total: 2m 0.48s
+[+] /user-tools/linux-neoverse_v2/perl-5.42.0-whb2pw2achkwinwp5q4rky26dfkfdix3
+==> Installing perl-5.42.0-whb2pw2achkwinwp5q4rky26dfkfdix3 [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /2kx6zzjgoglx43kcx4nvwh7zfacmef3k # autoconf@2.72 build_system=autotools platform=linux os=sles15 target=neoverse_v2
+==> No binary for autoconf-2.72-2kx6zzjgoglx43kcx4nvwh7zfacmef3k found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/af/afb181a76e1ee72832f6581c0eddf8df032b83e2e0239ef79ebedc4467d92d6e.tar.gz
+==> Ran patch() for autoconf
+==> autoconf: Executing phase: 'autoreconf'
+==> autoconf: Executing phase: 'configure'
+==> autoconf: Executing phase: 'build'
+==> autoconf: Executing phase: 'install'
+==> autoconf: Successfully installed autoconf-2.72-2kx6zzjgoglx43kcx4nvwh7zfacmef3k
+  Stage: 0.26s.  Autoreconf: 0.14s.  Configure: 2.14s.  Build: 0.26s.  Install: 0.79s.  Post-install: 0.16s.  Total: 3.82s
+[+] /user-tools/linux-neoverse_v2/autoconf-2.72-2kx6zzjgoglx43kcx4nvwh7zfacmef3k
+==> Installing autoconf-2.72-2kx6zzjgoglx43kcx4nvwh7zfacmef3k [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /xrdlqc563dixlhrjvhdmplasd6qq2ud7 # automake@1.18.1 build_system=autotools platform=linux os=sles15 target=neoverse_v2
+==> No binary for automake-1.18.1-xrdlqc563dixlhrjvhdmplasd6qq2ud7 found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/63/63e585246d0fc8772dffdee0724f2f988146d1a3f1c756a3dc5cfbefa3c01915.tar.gz
+==> Ran patch() for automake
+==> automake: Executing phase: 'autoreconf'
+==> automake: Executing phase: 'configure'
+==> automake: Executing phase: 'build'
+==> automake: Executing phase: 'install'
+==> automake: Successfully installed automake-1.18.1-xrdlqc563dixlhrjvhdmplasd6qq2ud7
+  Stage: 2.23s.  Autoreconf: 0.15s.  Configure: 2.36s.  Build: 0.74s.  Install: 2.00s.  Post-install: 0.26s.  Total: 7.82s
+[+] /user-tools/linux-neoverse_v2/automake-1.18.1-xrdlqc563dixlhrjvhdmplasd6qq2ud7
+==> Installing automake-1.18.1-xrdlqc563dixlhrjvhdmplasd6qq2ud7 [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /gnofvfyadpmadb2rj45hvoyrxyhxmnpk # gettext@1.0+bzip2+curses+git~libunistring+libxml2+pic+shared+tar+xz build_system=autotools platform=linux os=sles15 target=neoverse_v2
+==> No binary for gettext-1.0-gnofvfyadpmadb2rj45hvoyrxyhxmnpk found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/71/71132a3fb71e68245b8f2ac4e9e97137d3e5c02f415636eb508ae607bc01add7.tar.xz
+==> Ran patch() for gettext
+==> gettext: Executing phase: 'autoreconf'
+==> gettext: Executing phase: 'configure'
+==> gettext: Executing phase: 'build'
+==> gettext: Executing phase: 'install'
+==> gettext: Successfully installed gettext-1.0-gnofvfyadpmadb2rj45hvoyrxyhxmnpk
+  Stage: 11.76s.  Autoreconf: 0.76s.  Configure: 2m 54.48s.  Build: 1m 50.24s.  Install: 27.53s.  Post-install: 4.18s.  Total: 5m 29.11s
+[+] /user-tools/linux-neoverse_v2/gettext-1.0-gnofvfyadpmadb2rj45hvoyrxyhxmnpk
+==> Installing gettext-1.0-gnofvfyadpmadb2rj45hvoyrxyhxmnpk [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /fdmb5o62vd26tsjyjpyeero24fqzbuts # findutils@4.10.0 build_system=autotools patches:=440b954 platform=linux os=sles15 target=neoverse_v2
+==> No binary for findutils-4.10.0-fdmb5o62vd26tsjyjpyeero24fqzbuts found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/13/1387e0b67ff247d2abde998f90dfbf70c1491391a59ddfecb8ae698789f0a4f5.tar.xz
+==> Applied patch /user-tools/repos/spack_repo/builtin/packages/findutils/nonnull.patch
+==> findutils: Executing phase: 'autoreconf'
+==> findutils: Executing phase: 'configure'
+==> findutils: Executing phase: 'build'
+==> findutils: Executing phase: 'install'
+==> findutils: Successfully installed findutils-4.10.0-fdmb5o62vd26tsjyjpyeero24fqzbuts
+  Stage: 2.53s.  Autoreconf: 0.19s.  Configure: 55.42s.  Build: 5.71s.  Install: 2.59s.  Post-install: 0.26s.  Total: 1m 6.78s
+[+] /user-tools/linux-neoverse_v2/findutils-4.10.0-fdmb5o62vd26tsjyjpyeero24fqzbuts
+==> Installing findutils-4.10.0-fdmb5o62vd26tsjyjpyeero24fqzbuts [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /4d2twpmzghbumwvvdouhp2qwyvqs4hep # texinfo@7.2~xs build_system=autotools platform=linux os=sles15 target=neoverse_v2
+==> No binary for texinfo-7.2-4d2twpmzghbumwvvdouhp2qwyvqs4hep found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/e8/e86de7dfef6b352aa1bf647de3a6213d1567c70129eccbf8977706d9c91919c8.tar.gz
+==> No patches needed for texinfo
+==> texinfo: Executing phase: 'autoreconf'
+==> texinfo: Executing phase: 'configure'
+==> texinfo: Executing phase: 'build'
+==> texinfo: Executing phase: 'install'
+==> texinfo: Successfully installed texinfo-7.2-4d2twpmzghbumwvvdouhp2qwyvqs4hep
+  Stage: 7.35s.  Autoreconf: 0.95s.  Configure: 43.20s.  Build: 8.50s.  Install: 8.21s.  Post-install: 1.26s.  Total: 1m 9.60s
+[+] /user-tools/linux-neoverse_v2/texinfo-7.2-4d2twpmzghbumwvvdouhp2qwyvqs4hep
+==> Installing texinfo-7.2-4d2twpmzghbumwvvdouhp2qwyvqs4hep [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /hsccxl46qpytc5xh3gb7mh42keqwr5sc # libtool@2.5.4 build_system=autotools platform=linux os=sles15 target=neoverse_v2
+==> No binary for libtool-2.5.4-hsccxl46qpytc5xh3gb7mh42keqwr5sc found: installing from source
+==> Fetching https://ftpmirror.gnu.org/libtool/libtool-2.5.4.tar.gz
+==> Ran patch() for libtool
+==> libtool: Executing phase: 'autoreconf'
+==> libtool: Executing phase: 'configure'
+==> libtool: Executing phase: 'build'
+==> libtool: Executing phase: 'install'
+==> libtool: Successfully installed libtool-2.5.4-hsccxl46qpytc5xh3gb7mh42keqwr5sc
+  Stage: 2.21s.  Autoreconf: 0.15s.  Configure: 7.75s.  Build: 1.20s.  Install: 1.55s.  Post-install: 0.15s.  Total: 13.11s
+[+] /user-tools/linux-neoverse_v2/libtool-2.5.4-hsccxl46qpytc5xh3gb7mh42keqwr5sc
+==> Installing libtool-2.5.4-hsccxl46qpytc5xh3gb7mh42keqwr5sc [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /t3vlxzm5m3z2wxymu2neg4f4ub74ceqz # gmp@6.3.0+cxx build_system=autotools libs:=static platform=linux os=sles15 target=neoverse_v2
+==> No binary for gmp-6.3.0-t3vlxzm5m3z2wxymu2neg4f4ub74ceqz found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/ac/ac28211a7cfb609bae2e2c8d6058d66c8fe96434f740cf6fe2e47b000d1c20cb.tar.bz2
+==> No patches needed for gmp
+==> gmp: Executing phase: 'autoreconf'
+==> gmp: Executing phase: 'configure'
+==> gmp: Executing phase: 'build'
+==> gmp: Executing phase: 'install'
+==> gmp: Successfully installed gmp-6.3.0-t3vlxzm5m3z2wxymu2neg4f4ub74ceqz
+  Stage: 2.21s.  Autoreconf: 4.68s.  Configure: 17.67s.  Build: 6.75s.  Install: 0.56s.  Post-install: 0.08s.  Total: 32.06s
+[+] /user-tools/linux-neoverse_v2/gmp-6.3.0-t3vlxzm5m3z2wxymu2neg4f4ub74ceqz
+==> Installing gmp-6.3.0-t3vlxzm5m3z2wxymu2neg4f4ub74ceqz [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /tn7jorzntofuqltn727vkcuv4uxakeu2 # mpfr@4.2.2 build_system=autotools libs:=static platform=linux os=sles15 target=neoverse_v2
+==> No binary for mpfr-4.2.2-tn7jorzntofuqltn727vkcuv4uxakeu2 found: installing from source
+==> Fetching https://ftpmirror.gnu.org/mpfr/mpfr-4.2.2.tar.bz2
+==> No patches needed for mpfr
+==> mpfr: Executing phase: 'autoreconf'
+==> mpfr: Executing phase: 'configure'
+==> mpfr: Executing phase: 'build'
+==> mpfr: Executing phase: 'install'
+==> mpfr: Successfully installed mpfr-4.2.2-tn7jorzntofuqltn727vkcuv4uxakeu2
+  Stage: 2.33s.  Autoreconf: 7.22s.  Configure: 9.26s.  Build: 3.64s.  Install: 0.87s.  Post-install: 0.09s.  Total: 23.51s
+[+] /user-tools/linux-neoverse_v2/mpfr-4.2.2-tn7jorzntofuqltn727vkcuv4uxakeu2
+==> Installing mpfr-4.2.2-tn7jorzntofuqltn727vkcuv4uxakeu2 [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /gdft2p3ynnuunshn7n3l55kez6edyfsb # mpc@1.3.1 build_system=autotools libs:=static platform=linux os=sles15 target=neoverse_v2
+==> No binary for mpc-1.3.1-gdft2p3ynnuunshn7n3l55kez6edyfsb found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/ab/ab642492f5cf882b74aa0cb730cd410a81edcdbec895183ce930e706c1c759b8.tar.gz
+==> No patches needed for mpc
+==> mpc: Executing phase: 'autoreconf'
+==> mpc: Executing phase: 'configure'
+==> mpc: Executing phase: 'build'
+==> mpc: Executing phase: 'install'
+==> mpc: Successfully installed mpc-1.3.1-gdft2p3ynnuunshn7n3l55kez6edyfsb
+  Stage: 0.46s.  Autoreconf: 0.16s.  Configure: 6.72s.  Build: 1.15s.  Install: 0.42s.  Post-install: 0.07s.  Total: 9.11s
+[+] /user-tools/linux-neoverse_v2/mpc-1.3.1-gdft2p3ynnuunshn7n3l55kez6edyfsb
+==> Installing mpc-1.3.1-gdft2p3ynnuunshn7n3l55kez6edyfsb [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /wh247gcmx3qkmtgihfjpwuwg6yl6pudh # gawk@5.3.2~nls build_system=autotools platform=linux os=sles15 target=neoverse_v2
+==> No binary for gawk-5.3.2-wh247gcmx3qkmtgihfjpwuwg6yl6pudh found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/f8/f8c3486509de705192138b00ef2c00bbbdd0e84c30d5c07d23fc73a9dc4cc9cc.tar.xz
+==> No patches needed for gawk
+==> gawk: Executing phase: 'autoreconf'
+==> gawk: Executing phase: 'configure'
+==> gawk: Executing phase: 'build'
+==> gawk: Executing phase: 'install'
+==> gawk: Successfully installed gawk-5.3.2-wh247gcmx3qkmtgihfjpwuwg6yl6pudh
+  Stage: 2.38s.  Autoreconf: 0.16s.  Configure: 18.29s.  Build: 5.25s.  Install: 2.05s.  Post-install: 0.19s.  Total: 28.42s
+[+] /user-tools/linux-neoverse_v2/gawk-5.3.2-wh247gcmx3qkmtgihfjpwuwg6yl6pudh
+==> Installing gawk-5.3.2-wh247gcmx3qkmtgihfjpwuwg6yl6pudh [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers/gcc' install   --only-concrete --only=package /nthj77mecfkdytjes7qtbxly6hupd4jr # gcc@14.3.0~binutils+bootstrap~graphite+libsanitizer~mold~nvptx~piclibs+profiled+strip build_system=autotools build_type=Release languages:='c,c++,fortran' patches:=8b79314 platform=linux os=sles15 target=neoverse_v2
+==> No binary for gcc-14.3.0-nthj77mecfkdytjes7qtbxly6hupd4jr found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/e0/e0dc77297625631ac8e50fa92fffefe899a4eb702592da5c32ef04e2293aca3a.tar.xz
+==> Applied patch /user-tools/repos/spack_repo/builtin/packages/gcc/fixincludes-gcc-13-14.patch
+==> Ran patch() for gcc
+==> gcc: Executing phase: 'autoreconf'
+==> gcc: Executing phase: 'configure'
+==> gcc: Executing phase: 'build'
+==> gcc: Executing phase: 'install'
+==> gcc: Successfully installed gcc-14.3.0-nthj77mecfkdytjes7qtbxly6hupd4jr
+  Stage: 2m 12.19s.  Autoreconf: 3.31s.  Configure: 3.39s.  Build: 33m 35.73s.  Install: 7.77s.  Post-install: 2.73s.  Total: 36m 5.54s
+[+] /user-tools/linux-neoverse_v2/gcc-14.3.0-nthj77mecfkdytjes7qtbxly6hupd4jr
+==> Installing gcc-14.3.0-nthj77mecfkdytjes7qtbxly6hupd4jr [1/1]
+touch gcc/generated/build_cache
+make[1]: Leaving directory '/capstor/scratch/cscs/bcumming/disktest/job-64/compilers'
+/capstor/scratch/cscs/bcumming/disktest/job-64/bwrap-mutable-root.sh --tmpfs ~ --bind /capstor/scratch/cscs/bcumming/disktest/job-64/tmp /tmp --bind /capstor/scratch/cscs/bcumming/disktest/job-64/store /user-tools make -C generate-config
+/capstor/scratch/cscs/bcumming/disktest/job-64/bwrap-mutable-root.sh --tmpfs ~ --bind /capstor/scratch/cscs/bcumming/disktest/job-64/tmp /tmp --bind /capstor/scratch/cscs/bcumming/disktest/job-64/store /user-tools make -C environments
+make[1]: Entering directory '/capstor/scratch/cscs/bcumming/disktest/job-64/generate-config'
+spack config --scope=user add upstreams:system:install_tree:/user-tools
+# first create the directory, copy the base config and then update with compilers
+mkdir -p /user-tools/config
+install -m 644 /capstor/scratch/cscs/bcumming/disktest/job-64/config/packages.yaml /user-tools/config/packages.yaml
+spack compiler find --scope=user $(find  $(spack --color=never -e ../compilers/gcc find --explicit --format='{prefix}' gcc llvm llvm-amdgpu nvhpc) '(' -name gcc -o -name clang -o -name nvc ')' -path '*/bin/*' '(' -type f -o -type l ')' -exec dirname {} +)
+make[1]: Entering directory '/capstor/scratch/cscs/bcumming/disktest/job-64/environments'
+mkdir -p /user-tools
+spack compiler find --scope=user $(find  $(spack --color=never -e ../compilers/gcc find --explicit --format '{prefix}' ) '(' -name gcc -o -name clang -o -name nvc ')' -path '*/bin/*' '(' -type f -o -type l ')' -exec dirname {} +)
+==> Added 1 new compiler to /capstor/scratch/cscs/bcumming/disktest/job-64/environments/netcdf/packages.yaml
+    gcc@14.3.0
+==> Compilers are defined in the following files:
+    /capstor/scratch/cscs/bcumming/disktest/job-64/environments/netcdf/packages.yaml
+spack compiler find --scope=user $(find  $(spack --color=never -e ../compilers/gcc find --explicit --format '{prefix}' ) '(' -name gcc -o -name clang -o -name nvc ')' -path '*/bin/*' '(' -type f -o -type l ')' -exec dirname {} +)
+==> Added 1 new compiler to /capstor/scratch/cscs/bcumming/disktest/job-64/environments/uenv_tools/packages.yaml
+    gcc@14.3.0
+==> Compilers are defined in the following files:
+    /capstor/scratch/cscs/bcumming/disktest/job-64/environments/uenv_tools/packages.yaml
+==> Added 1 new compiler to /user-tools/config/packages.yaml
+    gcc@14.3.0
+==> Compilers are defined in the following files:
+spack config --scope=user add config:install_tree:root:/user-tools
+spack config --scope=user add config:install_tree:root:/user-tools
+    /user-tools/config/packages.yaml
+install -m 644 /capstor/scratch/cscs/bcumming/disktest/job-64/config/repos.yaml /user-tools/config/repos.yaml
+make[1]: Leaving directory '/capstor/scratch/cscs/bcumming/disktest/job-64/generate-config'
+/usr/bin/time -f '"%C" took %e seconds.' spack -e uenv_tools/ concretize -f
+==> Concretized 1 spec:
+ -   cwfdxee  squashfs@4.6.1+gzip~lz4~lzo~static~xz~zstd build_system=makefile default_compression=gzip platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+[+]  cdwve2q      ^compiler-wrapper@1.0 build_system=generic platform=linux os=sles15 target=neoverse_v2
+[e]  kwojghs      ^gcc@14.3.0+binutils+bootstrap~graphite+libsanitizer~mold~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages:='c,c++,fortran' platform=linux os=sles15 target=aarch64
+ -   hvkwxcz      ^gcc-runtime@14.3.0 build_system=generic platform=linux os=sles15 target=neoverse_v2
+[e]  alti7xg      ^glibc@2.31 build_system=autotools platform=linux os=sles15 target=aarch64
+ -   mltrsnl      ^gmake@4.4.1~guile build_system=generic platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   bj2mk4p      ^zlib-ng@2.3.2+compat+new_strategies+opt+pic+shared build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+[+]  7vbiayw          ^gnuconfig@2025-07-10 build_system=generic platform=linux os=sles15 target=neoverse_v2
+
+"spack -e uenv_tools/ concretize -f" took 34.22 seconds.
+spack -e uenv_tools/ env depfile --make-target-prefix uenv_tools/generated -o uenv_tools/Makefile
+/usr/bin/time -f '"%C" took %e seconds.' spack -e netcdf/ concretize -f
+==> Concretized 6 specs:
+ -   52hakqg  cdo@2.5.4~curl~external-grib1+fftw3+hdf5+libxml2~magics+netcdf+openmp+proj+szip+udunits2 build_system=autotools grib2=eccodes platform=linux os=sles15 target=neoverse_v2 %c,cxx,fortran=gcc@14.3.0
+[+]  cdwve2q      ^compiler-wrapper@1.0 build_system=generic platform=linux os=sles15 target=neoverse_v2
+ -   q34xddp      ^eccodes@2.45.0+aec~fortran~ipo~memfs~netcdf~openmp~png~pthreads+shared~tools build_system=cmake build_type=Release extra_definitions:=none generator=make jp2k=openjpeg platform=linux os=sles15 target=neoverse_v2 %c,cxx,fortran=gcc@14.3.0
+ -   t5yrgck          ^openjpeg@2.3.1~codec~ipo build_system=cmake build_type=Release generator=make platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   zjg26sn      ^fftw@3.3.10+mpi~openmp~pfft_patches+shared build_system=autotools patches:=872cff9 precision:=double,float platform=linux os=sles15 target=neoverse_v2 %c,fortran=gcc@14.3.0
+[e]  kwojghs      ^gcc@14.3.0+binutils+bootstrap~graphite+libsanitizer~mold~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages:='c,c++,fortran' platform=linux os=sles15 target=aarch64
+ -   hvkwxcz      ^gcc-runtime@14.3.0 build_system=generic platform=linux os=sles15 target=neoverse_v2
+[e]  alti7xg      ^glibc@2.31 build_system=autotools platform=linux os=sles15 target=aarch64
+ -   mltrsnl      ^gmake@4.4.1~guile build_system=generic platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+[+]  7vbiayw      ^gnuconfig@2025-07-10 build_system=generic platform=linux os=sles15 target=neoverse_v2
+ -   eyls22n      ^libaec@1.1.4~ipo+shared build_system=cmake build_type=Release generator=make platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   od7bu4p      ^libxml2@2.15.1+pic~python+shared build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   b2zal3m          ^libiconv@1.18 build_system=autotools libs:=shared,static platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   zmzouyv      ^netcdf-c@4.9.3+blosc~byterange~dap~fsync~hdf4~jna~logging+mpi~nczarr_zip+optimize~parallel-netcdf+pic+shared+szip+zstd build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   yyiai7n          ^c-blosc@1.21.6+avx2~ipo build_system=cmake build_type=Release generator=make platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   owsdea6              ^lz4@1.10.0+pic build_system=makefile libs:=shared,static platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   ehcuads              ^snappy@1.2.1~ipo+pic+shared build_system=cmake build_type=Release generator=make platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   wb2aep2      ^pkgconf@2.5.1 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   bnpq5jl      ^proj@9.7.0+curl~ipo~pic+shared+tiff build_system=cmake build_type=Release generator=make platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   uldfw6z          ^libtiff@4.7.1+ccitt~ipo~jbig+jpeg~jpeg12~lerc~libdeflate+logluv~lzma+lzw+next~old-jpeg~opengl+packbits~pic~pixarlog+shared+thunder~webp+zlib~zstd build_system=cmake build_type=Release generator=make platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   663i6c6              ^libjpeg-turbo@3.0.4~ipo~jpeg8~partial_decoder+pic build_system=cmake build_type=Release generator=make libs:=shared,static platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   hvfnqmp                  ^nasm@2.16.03 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   ymnb6ef      ^udunits@2.2.28+shared build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   ba4qkwt      ^util-linux-uuid@2.41 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   ro6m5la  cray-mpich@8.1.32~cuda~rocm build_system=generic platform=linux os=sles15 target=neoverse_v2 %c,cxx,fortran=gcc@14.3.0
+ -   wcey5xw      ^cray-pmi@6.1.15 build_system=generic platform=linux os=sles15 target=neoverse_v2
+ -   7mshvpt          ^cray-pals@1.3.2 build_system=generic platform=linux os=sles15 target=neoverse_v2
+ -   dgslj5z      ^patchelf@0.17.2 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+[e]  jhbzh3q      ^xpmem@2.9.6~kernel-module build_system=autotools platform=linux os=sles15 target=aarch64
+ -   igicyyy  hdf5@1.14.6~cxx~fortran+hl~ipo~java~map+mpi+shared~subfiling+szip+threadsafe+tools api=default build_system=cmake build_type=Release generator=make platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   dlczn2e      ^cmake@3.31.11~doc+ncurses+ownlibs~qtgui build_system=generic build_type=Release platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   bj2mk4p      ^zlib-ng@2.3.2+compat+new_strategies+opt+pic+shared build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   ijvc2ot  libfabric@2.4.0~asan+cuda~cuda_dlopen~debug+gdrcopy~gdrcopy_dlopen~kdreg~level_zero~lsan~rocm~tsan~ubsan~uring build_system=autotools cuda_arch:=none fabrics:=cxi,rxm,sockets,tcp,udp platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   dpca2rj      ^cassini-headers@git.release/shs-13.0.0=13.0.0 build_system=generic commit=144056ff2143b99ec08b3f1cd07c5e3ae176878d platform=linux os=sles15 target=neoverse_v2
+ -   6qvloks      ^cuda@13.1.1~allow-unsupported-compilers~dev build_system=generic platform=linux os=sles15 target=neoverse_v2
+ -   vglxsjf      ^curl@8.18.0~gssapi~ldap~libidn2~librtmp~libssh~libssh2+nghttp2 build_system=autotools libs:=shared,static tls:=openssl platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   pjpgtdm          ^nghttp2@1.67.1 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   umjhr2m      ^cxi-driver@git.release/shs-13.0.0=13.0.0 build_system=generic commit=f62ae06d0b05774eb8dc4d8f347b4eb881ae35cb platform=linux os=sles15 target=neoverse_v2
+ -   npd4u4q      ^gdrcopy@2.5.1+cuda build_system=makefile cuda_arch:=none platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   pal74ea          ^check@0.15.2 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   j3caite      ^json-c@0.18~ipo build_system=cmake build_type=Release generator=make platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   5rt2jmq      ^libcxi@git.release/shs-13.0.0=13.0.0~cuda~level_zero~rocm build_system=autotools commit=4b7fc964bf5065539a631abf425ba5a1a340e5ba platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   sb3hdqp          ^autoconf@2.72 build_system=autotools platform=linux os=sles15 target=neoverse_v2
+ -   o62gc2m              ^m4@1.4.21+sigsegv build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   2noazdt                  ^libsigsegv@2.15 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   ypahumr          ^automake@1.18.1 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   2n3nuud          ^libconfig@1.7.3 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   3zunosf              ^texinfo@7.2~xs build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   szpuzfw          ^libfuse@2.9.9~strip~system_install~useroot+utils build_system=meson buildtype=release default_library:=shared patches:=2e265d3,6b7ea84,6ced88c,94d5c6d platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   wurilam              ^meson@1.10.1 build_system=python_pip patches:=0f0b1bd platform=linux os=sles15 target=neoverse_v2
+ -   gu5stk6                  ^py-pip@25.1.1 build_system=generic platform=linux os=sles15 target=neoverse_v2
+ -   klut2qy                  ^py-setuptools@80.9.0 build_system=generic platform=linux os=sles15 target=neoverse_v2
+ -   pco4hic                  ^py-wheel@0.45.1 build_system=generic platform=linux os=sles15 target=neoverse_v2
+ -   jcdciq5                  ^python-venv@1.0 build_system=generic platform=linux os=sles15 target=neoverse_v2
+ -   47gdt2q              ^ninja@1.13.2+re2c build_system=generic platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   jhksuo5                  ^re2c@4.4 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   735a3jz          ^libnl@3.3.0 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   ntxroka              ^bison@3.8.2~color build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   j4lsd6c              ^flex@2.6.3+lex~nls build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   o6u6ltc          ^libtool@2.5.4 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   mirtmzz              ^findutils@4.10.0 build_system=autotools patches:=440b954 platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   dwhufvj          ^libuv@1.48.0 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   zo4copp          ^libyaml@0.2.5 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   hdwpxv4          ^lm-sensors@3-6-0 build_system=makefile platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   esavjie              ^sed@4.9 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   w73uxli              ^which@2.23 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   chzfpq5          ^numactl@2.0.19 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   yuchybq  ncview@2.1.9 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   bsv75ja      ^libpng@1.6.55~ipo~pic build_system=cmake build_type=Release generator=make libs:=shared,static platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   nqp3blk      ^libxaw@1.0.16 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   ap3l4xk          ^libx11@1.8.13 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   4ybsrxp              ^inputproto@2.3.2 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   zmxf76v              ^kbproto@1.0.7 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   3ck6raf              ^libxcb@1.17.0 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   ozojijs                  ^libpthread-stubs@0.5 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   ciwopfh                  ^libxau@1.0.12 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   ob3edqd                  ^libxdmcp@1.1.5 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   ta6u56q                  ^xcb-proto@1.17.0 build_system=autotools platform=linux os=sles15 target=neoverse_v2
+ -   5653sj2              ^xtrans@1.6.0 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   7g2lnde          ^libxext@1.3.6 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   3za5vu6          ^libxmu@1.2.1 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   gxratx6          ^libxpm@3.5.17 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   u54danr          ^libxt@1.3.1 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   kyho5xc              ^libice@1.1.2 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   jxtez3q              ^libsm@1.2.6 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   v4uqu72          ^util-macros@1.20.2 build_system=autotools platform=linux os=sles15 target=neoverse_v2
+ -   koif3uu          ^xextproto@7.3.0 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   mkra63i          ^xproto@7.0.31 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   y4jmitw  python@3.14.3+bz2+ctypes+dbm~debug~freethreading+libxml2+lzma~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~static~tests~tkinter+uuid+zlib+zstd build_system=generic platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   jdad7ih      ^bzip2@1.0.8~debug~pic+shared build_system=generic platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   jcyi2mg          ^diffutils@3.12 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   msq2i57      ^expat@2.7.4+libbsd build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   b6l5uya          ^libbsd@0.12.2 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   wdo6alz              ^libmd@1.1.0 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   nio4iu2      ^gdbm@1.26 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   t5di3c4      ^gettext@1.0+bzip2+curses+git~libunistring+libxml2+pic+shared+tar+xz build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   g2pveth          ^tar@1.35 build_system=autotools zip=pigz platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   pivfzil              ^pigz@2.8 build_system=makefile platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   fyu22m7      ^libffi@3.5.2 build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   lmv4kca      ^ncurses@6.5-20250705~symlinks+termlib abi=none build_system=autotools patches:=7a351bc platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   2djweqw      ^openssl@3.6.1~docs+shared build_system=generic certs=mozilla platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   2gsl6lo          ^ca-certificates-mozilla@2025-08-12 build_system=generic platform=linux os=sles15 target=neoverse_v2
+ -   xd5jeql          ^perl@5.42.0+cpanm+opcode+open+shared+threads build_system=generic platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   53fw42q              ^berkeley-db@18.1.40+cxx~docs+stl build_system=autotools patches:=26090f4,b231fcc platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+ -   a4mx6to      ^readline@8.3 build_system=autotools patches:=21f0a03 platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   lvxfq6u      ^sqlite@3.51.2+column_metadata+fts+rtree build_system=autotools platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   32xapag      ^xz@5.6.3~pic build_system=autotools libs:=shared,static platform=linux os=sles15 target=neoverse_v2 %c=gcc@14.3.0
+ -   avngy4r      ^zstd@1.5.7+programs build_system=makefile compression:=none libs:=shared,static platform=linux os=sles15 target=neoverse_v2 %c,cxx=gcc@14.3.0
+
+"spack -e netcdf/ concretize -f" took 52.05 seconds.
+spack -e netcdf/ env depfile --make-target-prefix netcdf/generated -o netcdf/Makefile
+mkdir -p /user-tools
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/environments/uenv_tools' install   --only-concrete --only=package /7vbiaywkvidppbnjnnxpwcfbddw2e7j6 # gnuconfig@2025-07-10 build_system=generic platform=linux os=sles15 target=neoverse_v2
+[+] /user-tools/linux-neoverse_v2/gnuconfig-2025-07-10-7vbiaywkvidppbnjnnxpwcfbddw2e7j6
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/environments/uenv_tools' install   --only-concrete --only=package /cdwve2qub4albif5ahsd5cnvohqppdcz # compiler-wrapper@1.0 build_system=generic platform=linux os=sles15 target=neoverse_v2
+[+] /user-tools/linux-neoverse_v2/compiler-wrapper-1.0-cdwve2qub4albif5ahsd5cnvohqppdcz
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/environments/uenv_tools' install   --only-concrete --only=package /alti7xgm6rypuxfjb44lpxtuxqj5tz2o # glibc@2.31 build_system=autotools platform=linux os=sles15 target=aarch64
+[+] /usr (external glibc-2.31-alti7xgm6rypuxfjb44lpxtuxqj5tz2o)
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/environments/netcdf' install   --only-concrete --only=package /cdwve2qub4albif5ahsd5cnvohqppdcz # compiler-wrapper@1.0 build_system=generic platform=linux os=sles15 target=neoverse_v2
+[+] /user-tools/linux-neoverse_v2/compiler-wrapper-1.0-cdwve2qub4albif5ahsd5cnvohqppdcz
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/environments/netcdf' install   --only-concrete --only=package /7vbiaywkvidppbnjnnxpwcfbddw2e7j6 # gnuconfig@2025-07-10 build_system=generic platform=linux os=sles15 target=neoverse_v2
+[+] /user-tools/linux-neoverse_v2/gnuconfig-2025-07-10-7vbiaywkvidppbnjnnxpwcfbddw2e7j6
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/environments/netcdf' install   --only-concrete --only=package /alti7xgm6rypuxfjb44lpxtuxqj5tz2o # glibc@2.31 build_system=autotools platform=linux os=sles15 target=aarch64
+[+] /usr (external glibc-2.31-alti7xgm6rypuxfjb44lpxtuxqj5tz2o)
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/environments/uenv_tools' install   --only-concrete --only=package /kwojghsygfoeomlr6b7voyw5tu6ggnv3 # gcc@14.3.0+binutils+bootstrap~graphite+libsanitizer~mold~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages:='c,c++,fortran' platform=linux os=sles15 target=aarch64
+[+] /user-tools/linux-neoverse_v2/gcc-14.3.0-nthj77mecfkdytjes7qtbxly6hupd4jr (external gcc-14.3.0-kwojghsygfoeomlr6b7voyw5tu6ggnv3)
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/environments/netcdf' install   --only-concrete --only=package /kwojghsygfoeomlr6b7voyw5tu6ggnv3 # gcc@14.3.0+binutils+bootstrap~graphite+libsanitizer~mold~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages:='c,c++,fortran' platform=linux os=sles15 target=aarch64
+[+] /user-tools/linux-neoverse_v2/gcc-14.3.0-nthj77mecfkdytjes7qtbxly6hupd4jr (external gcc-14.3.0-kwojghsygfoeomlr6b7voyw5tu6ggnv3)
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/environments/netcdf' install   --only-concrete --only=package /jhbzh3qd42knllaq2x26vipiw44jup2c # xpmem@2.9.6~kernel-module build_system=autotools platform=linux os=sles15 target=aarch64
+[+] /usr (external xpmem-2.9.6-jhbzh3qd42knllaq2x26vipiw44jup2c)
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/environments/netcdf' install   --only-concrete --only=package /2gsl6loxkv332jrax5wjrr4ykp27ckns # ca-certificates-mozilla@2025-08-12 build_system=generic platform=linux os=sles15 target=neoverse_v2
+==> No binary for ca-certificates-mozilla-2025-08-12-2gsl6loxkv332jrax5wjrr4ykp27ckns found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/64/64dfd5b1026700e0a0a324964749da9adc69ae5e51e899bf16ff47d6fd0e9a5e
+==> No patches needed for ca-certificates-mozilla
+==> ca-certificates-mozilla: Executing phase: 'install'
+==> ca-certificates-mozilla: Successfully installed ca-certificates-mozilla-2025-08-12-2gsl6loxkv332jrax5wjrr4ykp27ckns
+  Stage: 0.06s.  Install: 0.01s.  Post-install: 0.05s.  Total: 0.19s
+[+] /user-tools/linux-neoverse_v2/ca-certificates-mozilla-2025-08-12-2gsl6loxkv332jrax5wjrr4ykp27ckns
+==> Installing ca-certificates-mozilla-2025-08-12-2gsl6loxkv332jrax5wjrr4ykp27ckns [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/environments/uenv_tools' install   --only-concrete --only=package /hvkwxczad55pexnzdjkfo6isud3t6d2a # gcc-runtime@14.3.0 build_system=generic platform=linux os=sles15 target=neoverse_v2
+==> No binary for gcc-runtime-14.3.0-hvkwxczad55pexnzdjkfo6isud3t6d2a found: installing from source
+==> No patches needed for gcc-runtime
+==> gcc-runtime: Executing phase: 'install'
+==> gcc-runtime: Successfully installed gcc-runtime-14.3.0-hvkwxczad55pexnzdjkfo6isud3t6d2a
+  Stage: 0.00s.  Install: 0.09s.  Post-install: 0.08s.  Total: 0.24s
+[+] /user-tools/linux-neoverse_v2/gcc-runtime-14.3.0-hvkwxczad55pexnzdjkfo6isud3t6d2a
+==> Installing gcc-runtime-14.3.0-hvkwxczad55pexnzdjkfo6isud3t6d2a [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/environments/netcdf' install   --only-concrete --only=package /hvkwxczad55pexnzdjkfo6isud3t6d2a # gcc-runtime@14.3.0 build_system=generic platform=linux os=sles15 target=neoverse_v2
+[+] /user-tools/linux-neoverse_v2/gcc-runtime-14.3.0-hvkwxczad55pexnzdjkfo6isud3t6d2a
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/environments/netcdf' install   --only-concrete --only=package /dpca2rjoclzmwvipscllmlxj6r6fefga # cassini-headers@git.release/shs-13.0.0=13.0.0 build_system=generic commit=144056ff2143b99ec08b3f1cd07c5e3ae176878d platform=linux os=sles15 target=neoverse_v2
+==> No binary for cassini-headers-git.release/shs-13.0.0=13.0.0-dpca2rjoclzmwvipscllmlxj6r6fefga found: installing from source
+==> Error: Error: [('shs-cassini-headers/.git/objects/pack/pack-b7226e355959316d572681b776baacfedd5c273a.pack', '/tmp/bcumming/spack-stage/spack-stage-cassini-headers-git.release_shs-13.0.0_13.0.0-dpca2rjoclzmwvipscllmlxj6r6fefga/spack-src/.git/objects/pack/pack-b7226e355959316d572681b776baacfedd5c273a.pack', "[Errno 13] Permission denied: '/tmp/bcumming/spack-stage/spack-stage-cassini-headers-git.release_shs-13.0.0_13.0.0-dpca2rjoclzmwvipscllmlxj6r6fefga/spack-src/.git/objects/pack/pack-b7226e355959316d572681b776baacfedd5c273a.pack'"), ('shs-cassini-headers/.git/objects/pack/pack-b7226e355959316d572681b776baacfedd5c273a.idx', '/tmp/bcumming/spack-stage/spack-stage-cassini-headers-git.release_shs-13.0.0_13.0.0-dpca2rjoclzmwvipscllmlxj6r6fefga/spack-src/.git/objects/pack/pack-b7226e355959316d572681b776baacfedd5c273a.idx', "[Errno 13] Permission denied: '/tmp/bcumming/spack-stage/spack-stage-cassini-headers-git.release_shs-13.0.0_13.0.0-dpca2rjoclzmwvipscllmlxj6r6fefga/spack-src/.git/objects/pack/pack-b7226e355959316d572681b776baacfedd5c273a.idx'")]
+==> Installing cassini-headers-git.release/shs-13.0.0=13.0.0-dpca2rjoclzmwvipscllmlxj6r6fefga [1/1]
+make[1]: *** [netcdf/Makefile:23: netcdf/generated/install/cassini-headers-git.release_shs-13.0.0_13.0.0-dpca2rjoclzmwvipscllmlxj6r6fefga] Error 1
+make[1]: *** Waiting for unfinished jobs....
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/environments/netcdf' install   --only-concrete --only=package /umjhr2mad3m64eifhwtrgipwmoxakgnt # cxi-driver@git.release/shs-13.0.0=13.0.0 build_system=generic commit=f62ae06d0b05774eb8dc4d8f347b4eb881ae35cb platform=linux os=sles15 target=neoverse_v2
+==> No binary for cxi-driver-git.release/shs-13.0.0=13.0.0-umjhr2mad3m64eifhwtrgipwmoxakgnt found: installing from source
+==> Error: Error: [('shs-cxi-driver/.git/objects/pack/pack-b5eacbcdce8c8d4b52a6941724d18e33d6ad3f66.idx', '/tmp/bcumming/spack-stage/spack-stage-cxi-driver-git.release_shs-13.0.0_13.0.0-umjhr2mad3m64eifhwtrgipwmoxakgnt/spack-src/.git/objects/pack/pack-b5eacbcdce8c8d4b52a6941724d18e33d6ad3f66.idx', "[Errno 13] Permission denied: '/tmp/bcumming/spack-stage/spack-stage-cxi-driver-git.release_shs-13.0.0_13.0.0-umjhr2mad3m64eifhwtrgipwmoxakgnt/spack-src/.git/objects/pack/pack-b5eacbcdce8c8d4b52a6941724d18e33d6ad3f66.idx'"), ('shs-cxi-driver/.git/objects/pack/pack-b5eacbcdce8c8d4b52a6941724d18e33d6ad3f66.pack', '/tmp/bcumming/spack-stage/spack-stage-cxi-driver-git.release_shs-13.0.0_13.0.0-umjhr2mad3m64eifhwtrgipwmoxakgnt/spack-src/.git/objects/pack/pack-b5eacbcdce8c8d4b52a6941724d18e33d6ad3f66.pack', "[Errno 13] Permission denied: '/tmp/bcumming/spack-stage/spack-stage-cxi-driver-git.release_shs-13.0.0_13.0.0-umjhr2mad3m64eifhwtrgipwmoxakgnt/spack-src/.git/objects/pack/pack-b5eacbcdce8c8d4b52a6941724d18e33d6ad3f66.pack'")]
+==> Installing cxi-driver-git.release/shs-13.0.0=13.0.0-umjhr2mad3m64eifhwtrgipwmoxakgnt [1/1]
+make[1]: *** [netcdf/Makefile:23: netcdf/generated/install/cxi-driver-git.release_shs-13.0.0_13.0.0-umjhr2mad3m64eifhwtrgipwmoxakgnt] Error 1
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/environments/uenv_tools' install   --only-concrete --only=package /mltrsnlykwrjlo5equnhquswr3n6nwh2 # gmake@4.4.1~guile build_system=generic platform=linux os=sles15 target=neoverse_v2
+==> No binary for gmake-4.4.1-mltrsnlykwrjlo5equnhquswr3n6nwh2 found: installing from source
+==> Using cached archive: /capstor/scratch/cscs/bcumming/disktest/job-64/spack/var/spack/cache/_source-cache/archive/dd/dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3.tar.gz
+==> No patches needed for gmake
+==> gmake: Executing phase: 'install'
+==> gmake: Successfully installed gmake-4.4.1-mltrsnlykwrjlo5equnhquswr3n6nwh2
+  Stage: 0.46s.  Install: 15.50s.  Post-install: 0.06s.  Total: 16.08s
+[+] /user-tools/linux-neoverse_v2/gmake-4.4.1-mltrsnlykwrjlo5equnhquswr3n6nwh2
+==> Installing gmake-4.4.1-mltrsnlykwrjlo5equnhquswr3n6nwh2 [1/1]
+spack -e '/capstor/scratch/cscs/bcumming/disktest/job-64/environments/netcdf' install   --only-concrete --only=package /mltrsnlykwrjlo5equnhquswr3n6nwh2 # gmake@4.4.1~guile build_system=generic platform=linux os=sles15 target=neoverse_v2
+[+] /user-tools/linux-neoverse_v2/gmake-4.4.1-mltrsnlykwrjlo5equnhquswr3n6nwh2
+make[1]: Leaving directory '/capstor/scratch/cscs/bcumming/disktest/job-64/environments'
+make: *** [Makefile:43: environments] Error 2
+
+real    54m58.360s
+user    184m32.716s
+sys     61m22.413s

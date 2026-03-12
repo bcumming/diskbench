@@ -1,0 +1,5 @@
+-- output lost because we ran out of memory in terminal history because of acl warnings
+
+real    61m29.906s
+user    234m36.263s
+sys     73m7.086s

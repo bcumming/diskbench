@@ -1,0 +1,6 @@
+netcdf:
+  compiler: [gcc]
+  unify: true
+  specs:
+  - hdf5 +szip +hl ~mpi
+  - python
