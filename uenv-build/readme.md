@@ -17,6 +17,12 @@ time ./create_job.sh --system daint --path /iopsstor/scratch/cscs/$USER/disktest
 time ./create_job.sh --system daint --path /dev/shm/$USER/disktest/job-64
 ```
 
+The following creates a batch of identical configurations, for running multiple builds at the same time
+```
+./create-batch /capstor/scratch/cscs/$USER/disktest
+srun -n8 -N8 -t200 --reservation=CSCS_VAST_test ./job.sh /capstor/scratch/cscs/$USER/disktest
+```
+
 ## results
 
 The time for setup:
