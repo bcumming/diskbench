@@ -1,3 +1,9 @@
+benchmark the time it takes to build a reasonable complicated software stack using Spack.
+
+We use a make server with 64 processes, which can build multiple packages in parallel.
+
+## running the tests
+
 run this once after cloning this rep
 ```
 ./setup.sh
@@ -10,6 +16,8 @@ time ./create_job.sh --system daint --path /capstor/scratch/cscs/$USER/disktest/
 time ./create_job.sh --system daint --path /iopsstor/scratch/cscs/$USER/disktest/job-64
 time ./create_job.sh --system daint --path /dev/shm/$USER/disktest/job-64
 ```
+
+## results
 
 The time for setup:
 
